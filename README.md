@@ -9,7 +9,7 @@ The original StackGAN_v2 architecture is modified to form an autoencoder. Resnet
 - Download [image data](http://www.vision.caltech.edu/visipedia/CUB-200-2011.html) Extract them to Data/birds/
 # Running Autoencoder
 
-Activw main is main1.py
+Active driver prgram is main1.py
 ### To run on flower dataset
 ```
 python main1.py --cfg cfg/flowers_3stages.yml --gpu 0
