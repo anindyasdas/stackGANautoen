@@ -1,6 +1,6 @@
-# stackGANautoen
+# StackGAN_v2autoencoder
 
-The original StackGAN_v2 architecture is modified to form an autoencoder. For details refer my master's thesis.
+The original StackGAN_v2 architecture is modified to form an autoencoder. Resnet as encoder, StackGAND_v2 as decoder
 # Dataset
 - Download [Flower images](https://www.robots.ox.ac.uk/~vgg/data/flowers/102/102flowers.tgz)
 - Rename the jpg folder to images and unzip 102flowers.zip and put it inside 102flowers folder
