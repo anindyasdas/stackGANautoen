@@ -1,4 +1,6 @@
 # stackGANautoen
+
+The original StackGAN_v2 architecture is modified to form an autoencoder. For details refer my master's thesis.
 # Dataset
 - Download [Flower images](https://www.robots.ox.ac.uk/~vgg/data/flowers/102/102flowers.tgz)
 - Rename the jpg folder to images and unzip 102flowers.zip and put it inside 102flowers folder
@@ -16,3 +18,4 @@ python main1.py --cfg cfg/flowers_3stages.yml --gpu 0
 ```
 python main1.py --cfg cfg/birds_3stages.yml --gpu 0
 ```
+Models will automatically saved after a fixed number of iteration, to restart from a failed step edit netG_version in respective .yml file
