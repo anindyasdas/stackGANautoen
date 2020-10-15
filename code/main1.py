@@ -97,7 +97,7 @@ if __name__ == "__main__":
     timestamp = now.strftime('%Y_%m_%d_%H_%M_%S')
     output_dir = '../output/%s_%s_%s' % \
         (cfg.DATASET_NAME, cfg.CONFIG_NAME, timestamp)
-    #output_dir = '../output/flowers_3stages_2020_06_08_23_07_21'
+    #output_dir = '../output/flowers_3stages_2020_05_20_15_53_10'
 
     split_dir, bshuffle = 'train', True
     if not cfg.TRAIN.FLAG:
@@ -123,10 +123,17 @@ if __name__ == "__main__":
                               base_size=cfg.TREE.BASE_SIZE,
                               transform=image_transform)
     elif cfg.GAN.B_CONDITION:  # text to image task
-        from datasets1_2 import TextDatasetf
-        dataset = TextDatasetf(cfg.DATA_DIR, split_dir,
+        if cfg.DATASET_NAME == 'birds':
+            from datasets1_2 import TextDataset
+            dataset = TextDataset(cfg.DATA_DIR, split_dir,
                               base_size=cfg.TREE.BASE_SIZE,
                               transform=image_transform)
+        elif cfg.DATASET_NAME == 'flowers':
+            from datasets1_2 import TextDatasetf
+            dataset = TextDatasetf(cfg.DATA_DIR, split_dir,
+                              base_size=cfg.TREE.BASE_SIZE,
+                              transform=image_transform)
+            
     assert dataset
     num_gpu = len(cfg.GPU_ID.split(','))
     dataloader = torch.utils.data.DataLoader(
